@@ -1,0 +1,27 @@
+{
+  "name": "muhammad-abdullah-mern-10pshine",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Muhammad-Abdullah30/Muhammad-Abdullah-mern-10pshine#readme",
+  "bugs": {
+    "url": "https://github.com/Muhammad-Abdullah30/Muhammad-Abdullah-mern-10pshine/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muhammad-Abdullah30/Muhammad-Abdullah-mern-10pshine.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.4",
+    "react-bootstrap": "^2.10.10",
+    "react-router-dom": "^7.12.0"
+  }
+}
