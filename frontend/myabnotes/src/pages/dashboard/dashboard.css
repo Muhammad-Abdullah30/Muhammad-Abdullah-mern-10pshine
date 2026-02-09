@@ -1,0 +1,307 @@
+/* ========================================
+   Dashboard - Aesthetic Notes App Theme
+   ======================================== */
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+}
+
+.dashboard-header h3 {
+  margin: 0;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+.dashboard-header button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.dashboard-header button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Notes Grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 0 32px 40px;
+}
+
+/* Note Card */
+.note-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f5;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.note-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+  border-color: #e0e0ff;
+}
+
+/* Pinned Card */
+.note-card.pinned {
+  background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
+  border-color: #fbbf24;
+}
+
+/* Card Header */
+.note-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.note-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e1b4b;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.note-date {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Pin Icon Button */
+.pin-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  font-size: 20px;
+  color: #9ca3af;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #f3f4f6;
+  transition: all 0.3s ease;
+}
+
+.pin-icon:hover {
+  color: #6366f1;
+  background: #eef2ff;
+  transform: rotate(-15deg);
+}
+
+.pin-icon.active {
+  color: #f59e0b;
+  background: #fef3c7;
+}
+
+/* Content */
+.note-content {
+  font-size: 14px;
+  color: #4b5563;
+  margin: 0 0 18px 0;
+  line-height: 1.7;
+}
+
+/* Tags */
+.note-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #6366f1;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Action Buttons */
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.note-actions svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Edit Button */
+.note-actions svg:first-child {
+  color: #6366f1;
+  background: #eef2ff;
+}
+
+.note-actions svg:first-child:hover {
+  color: #ffffff;
+  background: #6366f1;
+  transform: scale(1.1);
+}
+
+/* Delete Button */
+.note-actions svg:last-child {
+  color: #ef4444;
+  background: #fef2f2;
+}
+
+.note-actions svg:last-child:hover {
+  color: #ffffff;
+  background: #ef4444;
+  transform: scale(1.1);
+}
+
+/* Note Form Container for Add/Edit Notes */
+.note-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+  padding: 40px 20px;
+  margin-top: 20px;
+}
+
+.note-form-container Form,
+.note-form-container form {
+  max-width: 520px;
+  width: 100%;
+  padding: 40px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.12);
+  background: #ffffff;
+}
+
+.note-form-container Form h1,
+.note-form-container form h1 {
+  margin-bottom: 32px;
+  color: #1e1b4b;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.note-form-container Form label,
+.note-form-container form label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.note-form-container Form .form-control,
+.note-form-container form .form-control {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.note-form-container Form .form-control:focus,
+.note-form-container form .form-control:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+/* Submit Button - Purple Gradient */
+.note-form-container .btn-dark,
+.note-form-container button[type="submit"] {
+  padding: 14px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+  border: none !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.note-form-container .btn-dark:hover,
+.note-form-container button[type="submit"]:hover {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Cancel Button - Gray/Outline Style */
+.note-form-container .btn-secondary {
+  padding: 14px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  background: #f3f4f6 !important;
+  border: 2px solid #e5e7eb !important;
+  color: #6b7280 !important;
+  transition: all 0.3s ease;
+}
+
+.note-form-container .btn-secondary:hover {
+  background: #e5e7eb !important;
+  border-color: #d1d5db !important;
+  color: #374151 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .notes-grid {
+    padding: 0 16px 24px;
+    gap: 16px;
+  }
+
+  .note-card {
+    padding: 20px;
+  }
+}

@@ -20,6 +20,9 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    // console.log("email: ",formData.email);
+    // console.log("name: ",formData.name);
+    // console.log("password: ",formData.password);
     try {
       const response = await fetch('http://localhost:5000/auth/login', {
         method: 'POST',
@@ -41,7 +44,6 @@ const Login = () => {
     } finally {
       setFormData({
         email: '',
-        
         password: ''
       })
     }
@@ -62,7 +64,7 @@ const Login = () => {
           />
         </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
+        <Form.Group controlId="formBasicEmail">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
