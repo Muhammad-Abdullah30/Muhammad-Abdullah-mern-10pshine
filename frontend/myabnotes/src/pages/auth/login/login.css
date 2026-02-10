@@ -1,0 +1,159 @@
+/* ========================================
+   Login Page - Premium Glassmorphism Design
+   ======================================== */
+
+.center-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    padding: var(--space-xl);
+    animation: fadeIn 0.6s ease-in;
+}
+
+.center-form Form {
+    max-width: 480px;
+    width: 100%;
+    padding: var(--space-3xl);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-2xl);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 100px rgba(99, 102, 241, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient overlay effect */
+.center-form Form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
+.center-form Form h1 {
+    margin-bottom: var(--space-2xl);
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    text-align: center;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+.center-form Form label {
+    font-weight: 600;
+    color: var(--color-gray-700);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-sm);
+    display: block;
+}
+
+.center-form Form .form-control {
+    margin-bottom: var(--space-xl);
+    padding: 14px 18px;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-gray-200);
+    background: var(--color-light-2);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+    color: var(--color-gray-800);
+}
+
+.center-form Form .form-control::placeholder {
+    color: var(--color-gray-400);
+}
+
+.center-form Form .form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: var(--color-light);
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.1),
+        0 4px 12px rgba(99, 102, 241, 0.15);
+    transform: translateY(-1px);
+}
+
+.center-form Form .btn {
+    padding: 15px;
+    font-weight: 700;
+    font-size: var(--font-size-base);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%) !important;
+    border: none !important;
+    color: var(--color-light) !important;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.center-form Form .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.center-form Form .btn:hover {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #c026d3 100%) !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(99, 102, 241, 0.4),
+        0 0 30px rgba(99, 102, 241, 0.2);
+}
+
+.center-form Form .btn:hover::before {
+    left: 100%;
+}
+
+.center-form Form .btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .center-form {
+        padding: var(--space-lg);
+    }
+
+    .center-form Form {
+        padding: var(--space-2xl);
+    }
+
+    .center-form Form h1 {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

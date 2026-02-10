@@ -90,9 +90,8 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="dashboard-header">
-        <h3>My Notes</h3>
-        <Button onClick={() => navigate("./addnotes")}>Add Note</Button>
+      <div className="add-note-container">
+        <Button onClick={() => navigate("./addnotes")} className="add-note-btn">Add Note</Button>
       </div>
 
       <div className="notes-grid">
