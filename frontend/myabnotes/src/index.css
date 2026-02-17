@@ -1,13 +1,300 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ========================================
+   MyABNotes - Global Design System
+   Modern, Premium Aesthetic with Glassmorphism
+   ======================================== */
+
+/* Google Fonts - Inter for modern typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ========================================
+   CSS Custom Properties - Design Tokens
+   ======================================== */
+:root {
+    /* Color Palette - Vibrant Gradients */
+    --color-primary: #6366f1;
+    --color-primary-dark: #4f46e5;
+    --color-primary-light: #818cf8;
+
+    --color-secondary: #8b5cf6;
+    --color-secondary-dark: #7c3aed;
+    --color-secondary-light: #a78bfa;
+
+    --color-accent: #d946ef;
+    --color-accent-dark: #c026d3;
+    --color-accent-light: #e879f9;
+
+    /* Neutral Colors */
+    --color-dark: #0f0c29;
+    --color-dark-2: #1e1b4b;
+    --color-dark-3: #302b63;
+    --color-dark-4: #24243e;
+
+    --color-light: #ffffff;
+    --color-light-2: #f9fafb;
+    --color-light-3: #f3f4f6;
+
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+
+    /* Status Colors */
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #6366f1, #8b5cf6);
+    --gradient-secondary: linear-gradient(135deg, #8b5cf6, #d946ef);
+    --gradient-accent: linear-gradient(135deg, #6366f1, #a855f7);
+    --gradient-background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-bg-light: rgba(255, 255, 255, 0.15);
+    --glass-bg-dark: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-blur: blur(20px);
+
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.25rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+    --shadow-glow-lg: 0 0 40px rgba(99, 102, 241, 0.4);
+
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+    --transition-all: all 250ms ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ========================================
+   Global Resets & Base Styles
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-gray-800);
+    background: var(--gradient-background);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Typography Defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-dark-2);
+}
+
+h1 {
+    font-size: var(--font-size-4xl);
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+h6 {
+    font-size: var(--font-size-base);
+}
+
+p {
+    margin-bottom: var(--space-md);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+/* Glassmorphism Card */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Smooth Transitions */
+.transition-all {
+    transition: var(--transition-all);
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2xl);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--glass-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* ========================================
+   Scrollbar Styling
+   ======================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-dark-3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-secondary);
+}
+
+/* ========================================
+   Responsive Typography
+   ======================================== */
+@media (max-width: 768px) {
+    :root {
+        --font-size-4xl: 1.875rem;
+        --font-size-3xl: 1.5rem;
+        --font-size-2xl: 1.25rem;
+    }
+}
+
+/* ========================================
+   Focus Styles for Accessibility
+   ======================================== */
+*:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }

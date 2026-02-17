@@ -1,0 +1,484 @@
+/* ========================================
+   Dashboard - Enhanced Premium Design
+   ======================================== */
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 40px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+  margin-bottom: 40px;
+  box-shadow:
+    0 8px 32px rgba(99, 102, 241, 0.4),
+    0 0 80px rgba(139, 92, 246, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+  pointer-events: none;
+}
+
+.dashboard-header h3 {
+  margin: 0;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-header button {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(255, 255, 255, 1);
+  color: #6366f1;
+  padding: 12px 28px;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-header button:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Add Note Button Container */
+.add-note-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 24px 40px 16px;
+  margin-bottom: 20px;
+}
+
+.add-note-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  padding: 12px 28px;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.add-note-btn:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #c026d3 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Notes Grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  padding: 0 40px 50px;
+}
+
+/* Note Card */
+.note-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-xl);
+  padding: 26px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(99, 102, 241, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.note-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 16px 48px rgba(99, 102, 241, 0.2),
+    0 0 0 1px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.note-card:hover::before {
+  opacity: 1;
+}
+
+/* Pinned Card */
+.note-card.pinned {
+  background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
+  border-color: #fbbf24;
+  box-shadow:
+    0 4px 24px rgba(251, 191, 36, 0.2),
+    0 0 0 1px rgba(251, 191, 36, 0.2);
+}
+
+.note-card.pinned::before {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  opacity: 1;
+}
+
+.note-card.pinned:hover {
+  box-shadow:
+    0 16px 48px rgba(251, 191, 36, 0.3),
+    0 0 0 1px rgba(251, 191, 36, 0.3);
+}
+
+/* Card Header */
+.note-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.note-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-dark-2);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.note-date {
+  font-size: 12px;
+  color: var(--color-gray-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Pin Icon Button */
+.pin-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: var(--color-gray-400);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  background: var(--color-gray-100);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.pin-icon:hover {
+  color: var(--color-primary);
+  background: rgba(99, 102, 241, 0.1);
+  transform: rotate(-15deg) scale(1.1);
+}
+
+.pin-icon.active {
+  color: #f59e0b;
+  background: rgba(251, 191, 36, 0.2);
+  transform: rotate(-15deg);
+}
+
+.pin-icon.active:hover {
+  background: rgba(251, 191, 36, 0.3);
+}
+
+/* Content */
+.note-content {
+  font-size: 14px;
+  color: var(--color-gray-600);
+  margin: 0 0 20px 0;
+  line-height: 1.7;
+}
+
+/* Tags */
+.note-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Action Buttons */
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 2px solid rgba(99, 102, 241, 0.08);
+}
+
+.note-actions svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  font-size: 19px;
+  padding: 11px;
+  border-radius: var(--radius-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+/* Edit Button */
+.note-actions svg:first-child {
+  color: var(--color-primary);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.note-actions svg:first-child:hover {
+  color: #ffffff;
+  background: var(--gradient-primary);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Delete Button */
+.note-actions svg:last-child {
+  color: var(--color-error);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.note-actions svg:last-child:hover {
+  color: #ffffff;
+  background: var(--color-error);
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Note Form Container for Add/Edit Notes */
+.note-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+  padding: 50px 24px;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.note-form-container Form,
+.note-form-container form {
+  max-width: 600px;
+  width: 100%;
+  padding: 48px;
+  border: none;
+  border-radius: var(--radius-2xl);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 0 100px rgba(99, 102, 241, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.note-form-container Form::before,
+.note-form-container form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
+.note-form-container Form h1,
+.note-form-container form h1 {
+  margin-bottom: 36px;
+  color: var(--color-dark-2);
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.note-form-container Form label,
+.note-form-container form label {
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-bottom: 8px;
+  font-size: var(--font-size-sm);
+}
+
+.note-form-container Form .form-control,
+.note-form-container form .form-control {
+  margin-bottom: 24px;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-gray-200);
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-family: var(--font-family);
+  background: var(--color-light-2);
+  color: var(--color-gray-800);
+}
+
+.note-form-container Form .form-control:focus,
+.note-form-container form .form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: var(--color-light);
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.1),
+    0 4px 12px rgba(99, 102, 241, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Submit Button - Purple Gradient */
+.note-form-container .btn-dark,
+.note-form-container button[type="submit"] {
+  padding: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.note-form-container .btn-dark:hover,
+.note-form-container button[type="submit"]:hover {
+  background: var(--gradient-accent) !important;
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 25px rgba(99, 102, 241, 0.4),
+    0 0 30px rgba(99, 102, 241, 0.2);
+}
+
+/* Cancel Button - Outlined Style */
+.note-form-container .btn-secondary {
+  padding: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: var(--radius-lg);
+  background: transparent !important;
+  border: 2px solid var(--color-gray-300) !important;
+  color: var(--color-gray-700) !important;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.note-form-container .btn-secondary:hover {
+  background: var(--color-gray-100) !important;
+  border-color: var(--color-gray-400) !important;
+  color: var(--color-gray-800) !important;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .notes-grid {
+    padding: 0 20px 30px;
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .note-card {
+    padding: 22px;
+  }
+
+  .note-form-container Form,
+  .note-form-container form {
+    padding: 36px 28px;
+  }
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  color: var(--color-light);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

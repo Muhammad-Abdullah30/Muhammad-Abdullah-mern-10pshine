@@ -1,38 +1,45 @@
+/* ========================================
+   App - Global Application Styles
+   ======================================== */
+
+/* Remove default CRA styles */
 .App {
-  text-align: center;
+    min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Page Transitions */
+.page-enter {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms ease, transform 300ms ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.page-exit {
+    opacity: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.page-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Loading States */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    color: var(--color-light);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+.loading-container .loading-spinner {
+    margin-bottom: var(--space-lg);
 }
